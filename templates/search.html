@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+<h1>Search Page</h1>
+
+{% block content %}
+
+{% for news in object_list %}
+    
+    {% comment %} <div>
+     <a href={% url "" news.title %} >{{ news.category }} </a> 
+         <h2><i class="fas fa-align-justify"></i>{{ news.category }}</h2> 
+
+         <a class="cn-date" href=""><i class="far fa-clock"></i>{{ n.create_at }}</a>
+         <a class="cn-title" href="">{{ n.title }}</a>
+    <br>
+    <br>
+    </div> {% endcomment %}
+    <div class="col-md-6">
+        <h2><i class="fas fa-align-justify"></i>{{ news.category }}</h2>
+        <h1> {{ news.id }}</h1>
+        <div class="row cn-slider">
+            <div class="col-md-6">
+                <div class="cn-img">
+                    <img width = 400 hight = 400 src="{{ news.img.url }}" />
+                    <div class="cn-content">
+                        <div class="cn-content-inner">
+                            <a class="cn-date" href=""><i class="far fa-clock"></i>{{ news.create_at }}</a>
+                            <a class="cn-title" href="">{{ news.title }}</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+{% endfor %} 
+
+
+{% endblock content %}

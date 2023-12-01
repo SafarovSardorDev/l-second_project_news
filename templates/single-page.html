@@ -1,0 +1,102 @@
+
+{% extends 'base.html' %}
+{% load static %}   
+{% block content %}
+
+        <!-- Breadcrumb Start -->
+        <div class='m-4'>
+            <div class="breadcrumb-wrap">
+                <div class="container-fluid">
+                    <ul class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="{% url 'home' %}">Home</a></li>
+                        {% comment %} <li class="breadcrumb-item"><a href="#">News</a></li> {% endcomment %}
+                        <li class="breadcrumb-item active">News details</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Breadcrumb End -->
+            
+            
+            <!-- Single News Start-->
+            <div class="single-news">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-8">
+                            <div class="sn-img">
+                                <img width =400 height =300 src="{{ news_detail.img.url }}" />
+                            </div>
+                            <div class="sn-content">
+                                    <a class="sn-title" href="">{{ news_detail.title }}</a><br>
+                                    <a class="sn-date" href=""><i class="far fa-clock"></i>{{ news_detail.update_at }}</a><br>
+                                    
+                                    <p> {{ news_detail.body }}</p> <br>
+                                    
+    
+                                    <p>
+                                        {{ news_detail.view_count }}
+                                    </p><br>
+    
+                                    <p>
+                                        {{ news_detail.user }}
+                                    </p><br>
+                                    
+                                
+                            </div>
+                        </div>
+    
+                        {% comment %} <div class="col-md-4">
+                            <div class="sidebar">
+                                <div class="sidebar-widget">
+                                    <h2><i class="fas fa-align-justify"></i>Category</h2>
+                                    <div class="category">
+                                        <ul class="fa-ul">
+                                            {% for cat in category %}
+                                            <li><span class="fa-li"><i class="far fa-arrow-alt-circle-right"></i></span><a href="{% url 'category_sort' %}?cat={{cat.name}}">{{ cat.name }}</a></li>
+                                        {% endfor %}                                           
+                                        </ul>
+                                    </div>
+                                </div>
+    
+                                <div class="sidebar-widget">
+                                    <h2><i class="fas fa-align-justify"></i>Tags</h2>
+                                    <div class="tags">
+                                        <a href="">National</a>
+                                        <a href="">International</a>
+                                        <a href="">Economics</a>
+                                        <a href="">Politics</a>
+                                        <a href="">Lifestyle</a>
+                                        <a href="">Technology</a>
+                                        <a href="">Trades</a>
+                                        <a href="">National</a>
+                                        <a href="">International</a>
+                                        <a href="">Economics</a>
+                                        <a href="">Politics</a>
+                                        <a href="">Lifestyle</a>
+                                        <a href="">Technology</a>
+                                        <a href="">Trades</a>
+                                    </div>
+                                </div>
+    
+    
+                                
+                            </div>
+                        </div> {% endcomment %}
+                    </div>
+                </div>
+            </div>
+
+    {% if request.user == news_detail.user or request.user.is_superuser %}
+           <button> <a class="sn-title "  href=" {% url "news_delete" news_detail.id %} ">O'chirich</a></button>
+           <button> <a class="sn-title bg-blue " href="{% url "news_update" news_detail.id %}">Yangilash</a> </button> 
+        
+
+    {% endif %}
+        <div><br><br>
+            <p>reach</p>
+
+            
+        <!-- Single News End-->
+
+
+        
+{% endblock content %}   

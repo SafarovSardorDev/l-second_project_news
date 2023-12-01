@@ -1,0 +1,312 @@
+
+{% extends 'base.html' %}
+{% load mathfilters %}
+{% load static %}
+{% block content %}  
+
+            
+            <div class="col-md-12">
+                <h2><i class="fas fa-align-justify"></i>Latest News</h2>
+                {% comment %} {% for last in update_at   %} {% endcomment %}
+                    <div class="row">
+
+                        {% comment %} {% for lastone in last.category.all  %} {% endcomment %}
+                        <div class="col-lg-6">
+                            <div class="mn-img">
+                                <img  width= 600 hight =600 src="{{ update_at.img.url }}" />
+                            </div>
+                            <div class="mn-content">
+                                <a class="mn-title" href="{% url 'news_detail' update_at.id  %}">{{ update_at.title }}</a> <br>
+                                <a class="mn-date" href="{% url 'news_detail' update_at.id  %}"><i class="far fa-clock"></i>{{ update_at.update_at }}</a>
+                                <p>
+                                    {{ update_at.body }}
+                                </p>
+                            </div>
+                           
+                        </div>
+                        {% comment %} {% endfor %} {% endcomment %}
+                    </div>
+                {% comment %} {% endfor %}   {% endcomment %}
+            </div>
+
+        <!-- Header End -->
+
+
+        <!-- Top News Start-->
+        {% comment %} <div class="top-news">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-6 tn-left">
+                        <div class="tn-img">
+                            <img width = '600' src="{% static "img/top-news-1.jpg" %}" />
+                            <div class="tn-content">
+                                <div class="tn-content-inner">
+                                    <a class="tn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
+                                    <a class="tn-title" href="">Lorem ipsum dolor sit amet adipiscing elit</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 tn-right">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="tn-img">
+                                    <img  src="{% static "img/top-news-2.jpg" %}" />
+                                    <div class="tn-content">
+                                        <div class="tn-content-inner">
+                                            <a class="tn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
+                                            <a class="tn-title" href="">Integer faucibus pharetra odio</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="tn-img">
+                                    <img src="{% static "img/top-news-3.jpg" %}" />
+                                    <div class="tn-content">
+                                        <div class="tn-content-inner">
+                                            <a class="tn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
+                                            <a class="tn-title" href="">Nulla vitae pharetra ligula</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> {% endcomment %}
+        <!-- Top News End-->
+
+
+        <!-- Category News Start-->
+
+
+        <div class="cat-news">
+            <div class="container-fluid">
+                <div class="row">
+                {% for i in category %}
+                    
+                    
+                    
+                
+                    <div class="col-md-6">
+                        <h2><i class="fas fa-align-justify"></i>{{ i.name }}</h2>
+                        <div class="row cn-slider">
+                            {% for j in i.category.all|slice:"-3:0" reversed %}
+                            <div class="col-md-6">
+                                <div class="cn-img" >
+                                    <img src="{{j.img.url}}" style="width:350px;height:250px" />
+                                    <div class="cn-content">
+                                        <div class="cn-content-inner">
+                                            <a class="cn-date" href="{% url 'news_detail' j.id  %}"><i class="far fa-clock"></i>{{ j.create_at }}</a>
+                                            <a class="cn-title" href="{% url 'news_detail' j.id  %}">{{j.title}}</a>
+                                            <b style="color: blue;">  {{j.user}} tomonidan yaratilgan</b>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {% endfor %}
+                            
+                        </div>
+                    </div>
+                    
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+
+
+     <!-- FOR BILAN ISHLAB KURAMIZ 👇 -->   
+
+    {% comment %} {% for n in news %}
+      
+        
+            <div class="cat-news">
+                <div class="container-fluid">
+                    <div class="row">
+                        
+                    
+                    
+            {% if forloop.counter|div:2 < 1  %}
+                    
+
+
+                        <div class="col-md-6">
+                            <h2><i class="fas fa-align-justify"></i>{{ n.category }}</h2>
+                            <div class="row cn-slider">
+                                <div class="col-md-6">
+                                    <div class="cn-img">
+                                        <img width = 400 hight = 400 src="{{ n.img.url }}" />
+                                        <div class="cn-content">
+                                            <div class="cn-content-inner">
+                                                <a class="cn-date" href=""><i class="far fa-clock"></i>{{ n.create_at }}</a>
+                                                <a class="cn-title" href="">{{ n.title }}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                        </div>
+             {% else %} 
+
+                        <div class="col-md-6">
+                            <h2><i class="fas fa-align-justify"></i>{{ n.category }}</h2>
+                            <div class="row cn-slider">
+                                <div class="col-md-6">
+                                    <div class="cn-img">
+                                        <img width = 400 hight = 400 src="{{ n.img.url }}" />
+                                        <div class="cn-content">
+                                            <div class="cn-content-inner">
+                                                <a class="cn-date" href=""><i class="far fa-clock"></i>{{ n.category }}</a>
+                                                <a class="cn-title" href="">{{ n.title }}</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+             {% endif %} 
+        {% endfor %}
+                    </div>
+                </div>
+            </div>  {% endcomment %}
+         <!-- FOR BILAN ISHLAB KURAMIZ 👆 -->
+      
+        
+
+        <!-- Category News End-->
+
+
+        <!-- Category News Start-->
+        
+        <!-- Category News End-->
+
+
+        <!-- Main News Start-->
+        <div class="main-news">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="row">
+                            {% comment %} <div class="col-md-12">
+                                <h2><i class="fas fa-align-justify"></i>Latest News</h2>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="mn-img">
+                                            <img src="img/latest-news.jpg" />
+                                        </div>
+                                        <div class="mn-content">
+                                            <a class="mn-title" href="">Cras commodo sem ut porta laoreet</a>
+                                            <a class="mn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed porta dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra inceptos...
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="mn-list">
+                                            <div class="mn-img">
+                                                <img src="img/latest-news.jpg" />
+                                            </div>
+                                            <div class="mn-content">
+                                                <a class="mn-title" href="">Pellentesque sit amet rutrum lacus</a>
+                                                <a class="mn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
+                                            </div>
+                                        </div>   
+                                    </div>
+                                </div>
+                            </div> {% endcomment %}
+                            {% comment %} <div class="col-md-12">
+                                <h2><i class="fas fa-align-justify"></i>Popular News</h2>
+                                <div class="row">
+                                    <div class="col-lg-6">
+                                        <div class="mn-img">
+                                            <img src="img/popular-news.jpg" />
+                                        </div>
+                                        <div class="mn-content">
+                                            <a class="mn-title" href="">Phasellus gravida metus vitae laoreet aliquam</a>
+                                            <a class="mn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
+                                            <p>
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus sed porta dui. Class aptent taciti sociosqu ad litora torquent per conubia nostra inceptos...
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="mn-list">
+                                            <div class="mn-img">
+                                                <img src="img/popular-news.jpg" />
+                                            </div>
+                                            <div class="mn-content">
+                                                <a class="mn-title" href="">Nullam risus ante sempe</a>
+                                                <a class="mn-date" href=""><i class="far fa-clock"></i>05-Feb-2020</a>
+                                            </div>
+                                        </div> 
+                                          
+                                     </div>
+                                </div> {% endcomment %}
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="sidebar">
+                            <div class="sidebar-widget">
+                                <h2><i class="fas fa-align-justify"></i>Category</h2>
+                                <div class="category">
+                                    <ul class="fa-ul">
+
+                                        {% for cat in category %}
+                                            <li><span class="fa-li"><i class="far fa-arrow-alt-circle-right"></i></span><a href="{% url 'category_sort' %}?cat={{cat.name}}">{{ cat.name }}</a></li>
+                                        {% endfor %}
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="sidebar-widget">
+                                <h2><i class="fas fa-align-justify"></i>Tags</h2>
+                                {% for tag in tags %}
+                                    <div class="tags">
+                                        <a href="{% url 'tags_sort' %}?tag={{tag.name}}">{{ tag.name }}</a>
+                                    </div>
+                                {% endfor %}
+                            </div>
+
+                            {% comment %} <div class="sidebar-widget">
+                                <h2><i class="fas fa-align-justify"></i>Ads 1 column</h2>
+                                <div class="image">
+                                    <a href=""><img src="img/adds-1.jpg" alt="Image"></a>
+                                </div>
+                            </div> {% endcomment %}
+
+                            {% comment %} <div class="sidebar-widget">
+                                <h2><i class="fas fa-align-justify"></i>Ads 2 column</h2>
+                                <div class="image">
+                                    <div class="row">
+                                        <div class="col-sm-6">
+                                            <a href=""><img src="img/adds-2.jpg" alt="Image"></a>
+                                        </div>
+                                        <div class="col-sm-6">
+                                            <a href=""><img src="img/adds-2.jpg" alt="Image"></a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> {% endcomment %}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Main News End-->
+
+
+        <!-- Footer Start -->
+{% endblock content %}
+       

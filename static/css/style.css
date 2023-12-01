@@ -1,0 +1,1065 @@
+/**********************************/
+/********** General CSS ***********/
+/**********************************/
+body {
+    color: #353535;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    background: #ffffff;
+}
+
+a {
+    color: #E47A2E;
+    transition: 0.5s;
+}
+
+a:hover,
+a:active,
+a:focus {
+    color: #353535;
+    outline: none;
+    text-decoration: none;
+}
+
+p {
+    color: #353535;
+    padding: 0;
+    margin: 0 0 15px 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #353535;
+    margin: 0 0 15px 0;
+    padding: 0;
+}
+
+.back-to-top {
+    position: fixed;
+    display: none;
+    background: #353535;
+    color: #ffffff;
+    width: 44px;
+    height: 44px;
+    text-align: center;
+    line-height: 1;
+    font-size: 16px;
+    right: 15px;
+    bottom: 15px;
+    transition: background 0.5s;
+    z-index: 11;
+}
+
+.back-to-top:hover {
+    background: #E47A2E;
+}
+
+.back-to-top i {
+    padding-top: 12px;
+    color: #ffffff;
+}
+
+
+/**********************************/
+/********* Form Input CSS *********/
+/**********************************/
+.form-control,
+.custom-select {
+    width: 100%;
+    height: 35px;
+    padding: 0 15px;
+    color: #666666;
+    border: 1px solid #353535;
+    border-radius: 0;
+    margin-bottom: 15px
+}
+
+.form-control:focus,
+.custom-select:focus {
+    box-shadow: none;
+    border-color: #E47A2E;
+}
+
+.custom-radio,
+.custom-checkbox {
+    margin-bottom: 15px;
+}
+
+.custom-radio .custom-control-label::before,
+.custom-checkbox .custom-control-label::before {
+    border-color: #353535;
+    border-radius: 0;
+}
+
+.custom-radio .custom-control-input:checked~.custom-control-label::before,
+.custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+    color: #ffffff;
+    background: #E47A2E;
+}
+
+button.btn {
+    color: #353535;
+    background: #ffffff;
+    border: 1px solid #353535;
+    border-radius: 0;
+}
+
+button.btn:hover {
+    color: #ffffff;
+    background: #E47A2E;
+    border-color: #E47A2E;
+}
+
+
+/**********************************/
+/********* Top Header CSS *********/
+/**********************************/
+.top-header {
+    padding: 15px 0;
+    background: #ffffff;
+}
+
+.top-header .logo {
+    text-align: left;
+    overflow: hidden;
+}
+
+.top-header .logo a img {
+    max-width: 100%;
+    max-height: 60px;
+}
+
+.top-header .search {
+    width: 100%;
+}
+
+.top-header .search input[type=text] {
+    width: 100%;
+    height: 40px;
+    padding: 0 15px;
+    color: #666666;
+    border: 1px solid #353535;
+}
+
+.top-header .search input[type=text]:focus {
+    border-color: #E47A2E;
+}
+
+.top-header .search button {
+    position: absolute;
+    width: 40px;
+    height: 38px;
+    top: 1px;
+    right: 16px;
+    padding: 0 15px;
+    border: none;
+    background: none;
+    color: #353535;
+}
+
+.top-header .search button:hover {
+    background: #E47A2E;
+    color: #ffffff;
+}
+
+.top-header .social {
+    position: relative;
+    width: 100%;
+    height: 40px;
+    overflow: hidden;
+    text-align: right;
+}
+
+.top-header .social a {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    padding: 1px 0;
+    text-align: center;
+    font-size: 22px;
+    border: 1px solid #353535;
+}
+
+.top-header .social a:hover {
+    background: #E47A2E;
+    border: 1px solid #E47A2E;
+}
+
+.top-header .social a i {
+    color: #353535;
+}
+
+.top-header .social a:hover i {
+    color: #ffffff;
+}
+
+@media (min-width: 768px) {
+    .top-header {
+        max-height: 90px;
+    }
+}
+
+@media (max-width: 767.98px) {
+    .top-header .logo,
+    .top-header .search,
+    .top-header .social {
+        text-align: center;
+        margin-bottom: 15px;
+    }
+    
+    .top-header .social {
+        margin-bottom: 0;
+    }
+}
+
+
+/**********************************/
+/********* Header Nav CSS *********/
+/**********************************/
+.header {
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, .3);
+}
+
+.header.header-sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+.header .navbar {
+    height: 100%;
+    padding: 0;
+}
+
+.navbar-dark .navbar-nav .nav-link,
+.navbar-dark .navbar-nav .nav-link:focus,
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    padding: 10px 10px 8px 10px;
+    color: #ffffff;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link.active {
+    background: rgba(228, 122, 46, .2);
+    border-bottom: 2px solid #E47A2E;
+    transition: none;
+}
+
+.header .dropdown-menu {
+    margin-top: 0;
+    border: 0;
+    border-radius: 0;
+    background: #f8f9fa;
+}
+
+@media (min-width: 768px) {
+    .header,
+    .header .navbar {
+        background: #353535 !important;
+    }
+    
+    .header .navbar-brand {
+        display: none;
+    }
+    
+    .header a.nav-link {
+        padding: 8px 15px;
+        font-size: 15px;
+        text-transform: uppercase;
+    }
+}
+
+@media (max-width: 768px) {   
+    .header,
+    .header .navbar {
+        background: #333333 !important;
+    }
+    
+    .header a.nav-link {
+        padding: 5px;
+    }
+    
+    .header .dropdown-menu {
+        box-shadow: none;
+    }
+}
+
+
+/**********************************/
+/********** Top News CSS **********/
+/**********************************/
+.top-news {
+    position: relative;
+    width: 100%;
+    padding: 30px 0 0 0;
+}
+
+.top-news .col-md-6 {
+    margin-bottom: 30px;
+}
+
+.top-news .tn-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.top-news .tn-img img {
+    width: 100%;
+}
+
+.top-news .tn-img:hover img {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+}
+
+.top-news .tn-content {
+    position: absolute;
+    top: 0; 
+    right: 0;
+    bottom: 0; 
+    left: 0;
+    padding: 15px 10px 15px 20px;
+    background-image: linear-gradient(rgba(0, 0, 0, .0), rgba(0, 0, 0, .3), rgba(0, 0, 0, .9));
+    display: flex;
+    align-items: flex-end;
+}
+
+.top-news .tn-content a.tn-date{
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    transition: .3s;
+    letter-spacing: 1px;
+}
+
+.top-news .tn-content a.tn-date i {
+    margin-right: 5px;
+}
+
+.top-news .tn-content a.tn-date:hover {
+    text-decoration: underline;
+}
+
+.top-news .tn-content a.tn-title {
+    display: block;
+    width: 100%;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+    transition: .3s;
+}
+
+.top-news .tn-left .tn-content a.tn-title {
+    font-size: 35px;
+    font-weight: 700;
+}
+
+.top-news .tn-content a.tn-title:hover {
+    color: #E47A2E;
+}
+
+
+/**********************************/
+/******* Category News CSS ********/
+/**********************************/
+.cat-news {
+    position: relative;
+    width: 100%;
+    padding: 0;
+}
+
+.cat-news .col-md-6 {
+    margin-bottom: 30px;
+}
+
+.cat-news h2 {
+    color: #353535;
+    font-size: 35px;
+    font-weight: 700;
+    margin-left: 40px;
+}
+
+.cat-news h2 i {
+    position: absolute;
+    top: 8px;
+    left: 15px;
+    font-size: 28px;
+}
+
+.cat-news .cn-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.cat-news .cn-img img {
+    width: 100%;
+}
+
+.cat-news .cn-img:hover img {
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+}
+
+.cat-news .cn-content {
+    position: absolute;
+    top: 0; 
+    right: 0;
+    bottom: 0; 
+    left: 0;
+    padding: 15px 10px 15px 20px;
+    background-image: linear-gradient(rgba(0, 0, 0, .0), rgba(0, 0, 0, .3), rgba(0, 0, 0, .9));
+    display: flex;
+    align-items: flex-end;
+}
+
+.cat-news .cn-content a.cn-date {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 400;
+    transition: .3s;
+    letter-spacing: 1px;
+}
+
+.cat-news .cn-content a.cn-date i {
+    margin-right: 5px;
+}
+
+.cat-news .cn-content a.cn-date:hover {
+    text-decoration: underline;
+}
+
+.cat-news .cn-content a.cn-title {
+    display: block;
+    width: 100%;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 400;
+    transition: .3s;
+}
+
+.cat-news .cn-content a.cn-title:hover {
+    color: #E47A2E;
+}
+
+.cat-news .slick-prev,
+.cat-news .slick-next {
+    top: -35px;
+    width: 28px;
+    height: 28px;
+    z-index: 1;
+    transition: .5s;
+    color: #ffffff;
+    background: #353535;
+}
+
+.cat-news .slick-prev {
+    left: calc(100% - 85px);
+}
+
+.cat-news .slick-next {
+    right: 14px;
+}
+
+.cat-news .slick-prev:hover,
+.cat-news .slick-prev:focus,
+.cat-news .slick-next:hover,
+.cat-news .slick-next:focus {
+    color: #ffffff;
+    background: #E47A2E;
+}
+
+.cat-news .slick-prev::before,
+.cat-news .slick-next::before {
+    font-family: "Font Awesome 5 Free";
+    font-size: 18px;
+    font-weight: 900;
+    color: #ffffff;
+}
+
+.cat-news .slick-prev::before {
+    content: "\f104";
+}
+
+.cat-news .slick-next::before {
+    content: "\f105";
+}
+
+
+/**********************************/
+/********** Main News CSS *********/
+/**********************************/
+.main-news {
+    position: relative;
+    width: 100%;
+    padding: 0;
+}
+
+.main-news .col-md-6,
+.main-news .col-md-12 {
+    margin-bottom: 30px;
+}
+
+.main-news h2 {
+    color: #353535;
+    font-size: 35px;
+    font-weight: 700;
+    margin-left: 40px;
+}
+
+.main-news h2 i {
+    position: absolute;
+    top: 8px;
+    left: 15px;
+    font-size: 28px;
+}
+
+.main-news .mn-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.main-news .mn-img img {
+    width: 100%;
+}
+
+.main-news .mn-content {
+    position: relative;
+    width: 100%;
+    padding: 15px 0 0 0;
+}
+
+.main-news .mn-content a.mn-title {
+    display: block;
+    width: 100%;
+    color: #353535;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 32px;
+    margin-bottom: 10px;
+}
+
+.main-news .mn-content a.mn-title:hover {
+    color: #E47A2E;
+}
+
+.main-news .mn-content a.mn-date {
+    display: block;
+    width: 100%;
+    margin-bottom: 5px;
+    color: #757575;
+    font-size: 14px;
+    font-weight: 400;
+    transition: .3s;
+    letter-spacing: 1px;
+}
+
+.main-news .mn-content a.mn-date i {
+    margin-right: 5px;
+}
+
+.main-news .mn-content a.mn-date:hover {
+    text-decoration: underline;
+}
+
+.main-news .mn-content p {
+    margin: 0;
+}
+
+.main-news .mn-list {
+    position: relative;
+    width: 100%;
+    float: left;
+    margin-bottom: 30px;
+}
+
+.main-news .mn-list .mn-img {
+    position: relative;
+    width: 100px;
+    margin-right: 15px;
+    float: left;
+    overflow: hidden;
+}
+
+.main-news .mn-list .mn-img img {
+    width: 100%;
+}
+
+.main-news .mn-list .mn-content {
+    position: relative;
+    float: left;
+    width: calc(100% - 115px);
+    padding: 0;
+}
+
+.main-news .mn-list .mn-content a.mn-title {
+    display: block;
+    width: 100%;
+    color: #353535;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 20px;
+    margin-bottom: 5px;
+}
+
+.main-news .mn-list .mn-content a.mn-title:hover {
+    color: #E47A2E;
+}
+
+.main-news .mn-list .mn-content a.mn-date {
+    display: block;
+    width: 100%;
+    margin-bottom: 0;
+    color: #757575;
+    font-size: 14px;
+    font-weight: 400;
+    transition: .3s;
+    letter-spacing: 1px;
+}
+
+.main-news .mn-list .mn-content a.mn-date i {
+    margin-right: 5px;
+}
+
+.main-news .mn-list .mn-content a.mn-date:hover {
+    text-decoration: underline;
+}
+
+
+/**********************************/
+/*********** Sidebar CSS **********/
+/**********************************/
+.sidebar {
+    position: relative;
+    width: 100%;
+}
+
+.sidebar .sidebar-widget {
+    position: relative;
+    width: 100%;
+    margin-bottom: 45px;
+}
+
+.sidebar .sidebar-widget h2 {
+    color: #353535;
+    font-size: 35px;
+    font-weight: 700;
+    margin-left: 40px;
+}
+
+.sidebar .sidebar-widget h2 i {
+    position: absolute;
+    top: 8px;
+    left: 0;
+    font-size: 28px;
+}
+
+.sidebar .sidebar-widget .category {
+    position: relative;
+}
+
+.sidebar .sidebar-widget .category .fa-ul {
+    margin-left: 23px;
+}
+
+.sidebar .sidebar-widget .category .fa-ul li {
+    margin-bottom: 10px;
+}
+
+.sidebar .sidebar-widget .category .fa-ul li i {
+    color: #353535;
+}
+
+.sidebar .sidebar-widget .category .fa-ul li a {
+    color: #353535;
+}
+
+.sidebar .sidebar-widget .category .fa-ul li a:hover {
+    color: #E47A2E;
+}
+
+.sidebar .sidebar-widget .tags {
+    position: relative;
+}
+
+.sidebar .sidebar-widget .tags a {
+    display: inline-block;
+    margin-bottom: 5px;
+    padding: 5px 10px;
+    color: #353535;
+    background: #ffffff;
+    border: 1px solid #353535;
+}
+
+.sidebar .sidebar-widget .tags a:hover {
+    color: #ffffff;
+    background: #E47A2E;
+    border: 1px solid #E47A2E;
+}
+
+.sidebar .sidebar-widget .image a {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+}
+
+.sidebar .sidebar-widget .image img {
+    max-width: 100%;
+    transition: .3s;
+}
+
+.sidebar .sidebar-widget .image img:hover {
+    transform: scale(1.1);
+    filter: blur(3px);
+    -webkit-filter: blur(3px);
+}
+
+
+/**********************************/
+/********* Breadcrumb CSS *********/
+/**********************************/
+.breadcrumb-wrap {
+    position: relative;
+    width: 100%;
+    background: #ffffff;
+}
+
+.breadcrumb-wrap .breadcrumb {
+    margin: 25px 0 0 0;
+    padding: 0;
+    background: none;
+}
+
+.breadcrumb-wrap .breadcrumb .breadcrumb-item + .breadcrumb-item::before {
+    color: #353535;
+}
+
+.breadcrumb-wrap .breadcrumb .breadcrumb-item.active {
+    color: #353535;
+}
+
+
+/**********************************/
+/********* Single News CSS ********/
+/**********************************/
+.single-news {
+    position: relative;
+    width: 100%;
+    padding: 25px 0 0 0;
+}
+
+.single-news .sn-img {
+    position: relative;
+    overflow: hidden;
+}
+
+.single-news .sn-img img {
+    width: 100%;
+}
+
+.single-news .sn-content {
+    position: relative;
+    width: 100%;
+    padding: 30px 0 30px 0;
+}
+
+.single-news .sn-content a.sn-title {
+    display: block;
+    width: 100%;
+    color: #353535;
+    font-size: 35px;
+    font-weight: 700;
+    line-height: 32px;
+    margin-bottom: 10px;
+}
+
+.single-news .sn-content a.sn-title:hover {
+    color: #E47A2E;
+}
+
+.single-news .sn-content a.sn-date {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    color: #757575;
+    font-size: 14px;
+    font-weight: 400;
+    transition: .3s;
+    letter-spacing: 1px;
+}
+
+.single-news .sn-content a.sn-date i {
+    margin-right: 5px;
+}
+
+.single-news .sn-content a.sn-date:hover {
+    text-decoration: underline;
+}
+
+
+/**********************************/
+/********** Contact CSS ***********/
+/**********************************/
+.contact {
+    position: relative;
+    padding: 25px 0 45px 0;
+}
+
+.contact .map {
+    position: relative;
+    width: 100%;
+}
+
+.contact .map iframe {
+    width: 100%;
+    height: 300px;
+}
+
+.contact .contact-info h4 {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.contact .contact-info h4 i {
+    color: #353535;
+    margin-right: 5px;
+}
+
+.contact .social {
+    position: relative;
+    width: 100%;
+}
+
+.contact .social a {
+    display: inline-block;
+    margin: 10px 10px 0 0;
+    width: 40px;
+    height: 40px;
+    padding: 3px 0;
+    text-align: center;
+    font-size: 20px;
+    border: 1px solid #353535;
+}
+
+.contact .social a i {
+    color: #353535;
+}
+
+.contact .social a:hover {
+    background: #E47A2E;
+    border-color: #E47A2E;
+}
+
+.contact .social a:hover i {
+    color: #ffffff;
+}
+
+.contact .form {
+    color: #666666;
+}
+
+@media (max-width: 767.98px) {
+    .contact .form {
+        margin-bottom: 30px;
+    }
+}
+
+
+/**********************************/
+/********** Footer CSS ************/
+/**********************************/
+.footer {
+    position: relative;
+    padding: 60px 0 0 0;
+    margin-top: 15px;
+    background: #353535;
+}
+
+@media (min-width: 992px) {
+    .footer .container-fluid {
+        max-width: 95%;
+    }
+}
+
+.footer .footer-widget {
+    position: relative;
+    width: 100%;
+    margin-bottom: 60px;
+}
+
+.footer .footer-widget h1 {
+    color: #ffffff;
+    margin-bottom: 18px; 
+}
+
+.footer .footer-widget .title {
+    color: #ffffff;
+    white-space: nowrap;
+}
+
+.footer .footer-widget p {
+    color: #ffffff;
+}
+
+.footer .footer-widget ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.footer .footer-widget ul li {
+    margin-bottom: 12px; 
+}
+
+.footer .footer-widget ul li:last-child {
+    margin-bottom: 0; 
+}
+
+.footer .footer-widget ul li a {
+    color: #ffffff;
+    white-space: nowrap;
+    display: block;
+    line-height: 23px;
+}
+
+.footer .footer-widget ul li a::before {
+    content: '\f061';
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    padding-right: 5px;
+}
+
+.footer .footer-widget ul li a:hover {
+    padding-left: 10px; 
+}
+
+.footer .contact-info p {
+    margin-bottom: 5px;
+    color: #ffffff;
+    font-size: 16px;
+}
+
+.footer .contact-info p i {
+    color: #ffffff;
+    margin-right: 5px;
+}
+
+.footer .social {
+    position: relative;
+    width: 100%;
+}
+
+.footer .social a {
+    display: inline-block;
+    margin: 10px 5px 0 0;
+    width: 35px;
+    height: 35px;
+    padding: 2px 0;
+    text-align: center;
+    font-size: 18px;
+    background: #353535;
+    border: 1px solid #ffffff;
+}
+
+.footer .social a i {
+    color: #ffffff;
+}
+
+.footer .social a:hover {
+    background: #E47A2E;
+    border: 1px solid #E47A2E;
+}
+
+.footer .newsletter {
+    position: relative;
+    width: 100%;
+}
+
+.footer .newsletter form {
+    position: relative;
+    width: 100%;
+}
+
+.footer .newsletter input {
+    width: 100%;
+    height: 40px;
+    padding: 0 15px;
+    border: 1px solid #ffffff;
+}
+
+.footer .newsletter .btn {
+    position: absolute;
+    width: 80px;
+    height: 40px;
+    top: 0;
+    right: 0;
+    padding: 0 15px;
+    border: none;
+    background: #353535;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+}
+
+.footer .newsletter .btn:hover {
+    background: #E47A2E;
+}
+
+.footer .newsletter input:focus,
+.footer .newsletter .btn:focus {
+    box-shadow: none;
+}
+
+
+/**********************************/
+/******** Footer Bottom CSS *******/
+/**********************************/
+.footer-bottom {
+    position: relative;
+    padding: 25px 0;
+    background: #111111;
+}
+
+.footer-bottom .copyright {
+    text-align: left;
+}
+
+.footer-bottom .template-by {
+    text-align: right;
+}
+
+.footer-bottom .copyright p,
+.footer-bottom .template-by p {
+    color: #ffffff;
+    font-weight: 400;
+    margin: 0;
+}
+
+.footer-bottom .copyright p a,
+.footer-bottom .template-by p a {
+    font-weight: 600;
+}
+
+.footer-bottom .copyright p a:hover,
+.footer-bottom .template-by p a:hover {
+    color: #ffffff;
+}
+
+@media (max-width: 768.98px) {
+    .footer-bottom .copyright,
+    .footer-bottom .template-by {
+        text-align: center; 
+    } 
+}

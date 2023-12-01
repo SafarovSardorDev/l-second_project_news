@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class='m-4'>
+    <form method= 'post' enctype="multipart/form-data">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type='Submit'> Saqlash</button>
+    </form>
+</div>
+{% endblock content %}

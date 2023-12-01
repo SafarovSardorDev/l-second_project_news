@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load mathfilters %}
+{% load static %}
+{% block content %} 
+
+    <p>
+      finally  
+    </p><br>
+    {% for tag_div in queryset %}
+ 
+        
+                <div class="single-news">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <div class="sn-img">
+                                    <img width =400 height =400 src="{{ tag_div.img.url }}" />
+                                </div>
+                                <div class="sn-content">
+                                        <a class="sn-title" href="">{{ tag_div.title }}</a><br>
+                                        <a class="sn-date" href=""><i class="far fa-clock"></i>{{ tag_div.update_at }}</a><br>
+                                        
+                                        <p> {{ tag_div.body }}</p> <br>
+                                        
+
+                                        <p>
+                                            {{ tag_div.view_count }}
+                                        </p><br>
+
+                                        <p>
+                                            {{ tag_div.user }}
+                                        </p><br>
+                                        
+                                    
+                                </div>
+                            </div>
+       
+    {% endfor %}
+    
+                    <div class="col-md-4">
+                        <div class="sidebar">
+                            <div class="sidebar-widget">
+                                <h2><i class="fas fa-align-justify"></i>Category</h2>
+                                <div class="category">
+                                    <ul class="fa-ul">
+                                        <li><span class="fa-li"><i class="far fa-arrow-alt-circle-right"></i></span><a href="">National</a></li>
+                                        <li><span class="fa-li"><i class="far fa-arrow-alt-circle-right"></i></span><a href="">International</a></li>
+                                        <li><span class="fa-li"><i class="far fa-arrow-alt-circle-right"></i></span><a href="">Economics</a></li>
+                                        <li><span class="fa-li"><i class="far fa-arrow-alt-circle-right"></i></span><a href="">Politics</a></li>
+                                        <li><span class="fa-li"><i class="far fa-arrow-alt-circle-right"></i></span><a href="">Lifestyle</a></li>
+                                        <li><span class="fa-li"><i class="far fa-arrow-alt-circle-right"></i></span><a href="">Technology</a></li>
+                                        <li><span class="fa-li"><i class="far fa-arrow-alt-circle-right"></i></span><a href="">Trades</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="sidebar-widget">
+                                <h2><i class="fas fa-align-justify"></i>Tags</h2>
+                                <div class="tags">
+                                    <a href="">National</a>
+                                    <a href="">International</a>
+                                    <a href="">Economics</a>
+                                    <a href="">Politics</a>
+                                    <a href="">Lifestyle</a>
+                                    <a href="">Technology</a>
+                                    <a href="">Trades</a>
+                                    <a href="">National</a>
+                                    <a href="">International</a>
+                                    <a href="">Economics</a>
+                                    <a href="">Politics</a>
+                                    <a href="">Lifestyle</a>
+                                    <a href="">Technology</a>
+                                    <a href="">Trades</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+
+{% endblock content %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+    <div class = 'm-4'>
+        <form method ='post'>{% csrf_token %}
+            <p> Are you sure you want to delete  the news  </p> <b>"{{ object }}"</b><br>
+            <input type='submit' value= 'confirm'>
+            <button><a class="cn-title" href="{% url 'news_detail' object.id  %}">cancel</a></button>  
+
+
+        </form>
+        
+    </div>
+
+{% endblock content  %}
